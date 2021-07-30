@@ -12,7 +12,7 @@ import Alamofire
 class NetworkService {
     func fetchTask(searchText: String, complition: @escaping (SearchResponse?) -> Void ) {
         let url = "https://itunes.apple.com/search"
-        let parametrs = ["term":"\(searchText)","limit":"10", "media":"music"]
+        let parametrs = ["term":"\(searchText)","limit":"100", "media":"music"]
         
         AF.request(url, method: .get, parameters: parametrs, encoding: URLEncoding.default, headers: nil ).responseData{(dataResponse) in
             if let error = dataResponse.error {
